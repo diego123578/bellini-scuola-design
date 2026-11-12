@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellini Scuola Design | Arredi scolastici</title>
+<style>
+:root{
+  --cream:#f6f2e8;
+  --ink:#25211d;
+  --orange:#c84b1c;
+  --gold:#d7aa39;
+  --line:#ded8ca;
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.container{width:min(1160px,88%);margin:auto}
+
+/* NAV */
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(37,33,29,.1)}
+.brand{font-family:Georgia,serif;font-size:25px;line-height:.88;letter-spacing:-.5px}
+.brand small{font-family:Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.navlinks{display:flex;gap:26px;align-items:center;font-size:14px}
+.navlinks a{color:inherit;text-decoration:none}
+.cta-small{background:var(--ink);color:white!important;padding:11px 17px;border-radius:30px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:90px 0 110px;min-height:670px}
+.blob{position:absolute;border-radius:50%;z-index:-1}
+.gold{width:560px;height:560px;background:var(--gold);right:-240px;top:-270px}
+.beige{width:560px;height:420px;background:#e7e1cb;left:-300px;bottom:-210px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:end}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:bold;color:#786d59}
+h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(60px,8vw,112px);line-height:.88;letter-spacing:-4px;margin:18px 0 28px}
+.hero p{font-size:18px;line-height:1.6;max-width:620px;margin:0 0 28px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 23px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:14px}
+.btn-dark{background:var(--ink);color:white}
+.btn-light{border:1px solid var(--ink);color:var(--ink)}
+.hero-card{background:var(--orange);color:white;padding:38px;border-radius:48px 48px 100px 48px;min-height:300px;display:flex;flex-direction:column;justify-content:end}
+.hero-card span{font-size:13px;text-transform:uppercase;letter-spacing:2px}
+.hero-card strong{font-family:Georgia,serif;font-size:47px;font-weight:500;line-height:1;margin-top:12px}
+
+/* INTRO */
+.intro{padding:95px 0;border-top:1px solid var(--line)}
+.section-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#786d59;font-weight:bold}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,65px);font-weight:500;line-height:1;margin:15px 0}
+.intro p{font-size:18px;line-height:1.7}
+
+/* PRODUCTS */
+.products-section{padding:40px 0 115px}
+.products-header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
+.products-header p{max-width:410px;line-height:1.6}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.product{background:var(--orange);border-radius:42px;overflow:hidden;padding:28px;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end}
+.product-image{height:300px;display:flex;align-items:center;justify-content:center;position:relative}
+.product-image:before{content:"";position:absolute;width:82%;height:65%;border-radius:50%;background:rgba(255,255,255,.09);filter:blur(2px)}
+/* Illustrazioni originali dei banchi, modificabili nel CSS */
+.desk{position:relative;width:255px;height:150px;z-index:1}
+.desk .top{position:absolute;left:15px;top:15px;width:225px;height:28px;background:#b98552;border:4px solid #7d5637;border-radius:5px;transform:skewX(-12deg);box-shadow:0 10px 15px rgba(0,0,0,.18)}
+.desk .leg{position:absolute;width:14px;height:110px;background:#555;top:38px;border-radius:3px}
+.desk .l1{left:40px;transform:rotate(4deg)} .desk .l2{right:38px;transform:rotate(-4deg)}
+.desk .bar{position:absolute;left:42px;top:92px;width:172px;height:10px;background:#555;transform:rotate(-2deg)}
+.desk.mdf .top{background:#d5c3a4;border-color:#a99a80;height:34px}
+.desk.mdf .leg{background:#777;width:22px}
+.product-info{background:var(--white);border-radius:26px;padding:27px;color:var(--ink)}
+.product-type{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;color:#777}
+.product h3{font-family:Georgia,serif;font-size:32px;font-weight:500;margin:10px 0 22px}
+.price-row{display:flex;justify-content:space-between;align-items:end;border-top:1px solid #e8e5df;padding-top:18px}
+.old-price{font-size:13px;color:#777;text-decoration:line-through}
+.price{font-size:29px;font-weight:bold}
+.product-info a{display:block;margin-top:20px;color:var(--ink);font-size:14px;font-weight:bold;text-decoration:none}
+
+/* PROMO */
+.promo{background:var(--gold);padding:100px 0}
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.promo h2{font-size:62px}
+.promo-box{background:white;border-radius:35px;padding:40px}
+.promo-box ul{padding-left:18px;line-height:2;font-size:17px}
+
+/* ABOUT */
+.about{padding:110px 0}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.about-art{height:430px;background:var(--orange);border-radius:48px 120px 48px 48px;position:relative;overflow:hidden}
+.about-art:before,.about-art:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
+.about-art:before{width:300px;height:300px;right:-80px;top:-60px}
+.about-art:after{width:230px;height:230px;left:-80px;bottom:-80px}
+
+/* CONTACT */
+.contact{padding:90px 0;background:var(--ink);color:white}
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}
+.contact h2{margin-top:12px}
+.contact p{line-height:1.8;font-size:17px}
+.contact-card{background:white;color:var(--ink);border-radius:28px;padding:32px}
+.contact-card input,.contact-card textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;margin:7px 0 12px;font:inherit}
+.contact-card button{border:0;background:var(--orange);color:white;padding:14px 20px;border-radius:25px;font-weight:bold;cursor:pointer}
+
+footer{padding:28px 0;background:#191714;color:#d8d3c8;font-size:13px}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+
+@media(max-width:800px){
+ nav{height:auto;padding:20px 0}.navlinks a:not(.cta-small){display:none}
+ .hero{padding:65px 0 85px}.hero-grid,.intro-grid,.promo-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero-card{min-height:220px}.products{grid-template-columns:1fr}
+ .products-header{align-items:flex-start;flex-direction:column}
+ .product{min-height:570px}.product-image{height:260px}
+ .promo h2{font-size:48px}.footer-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<nav>
+  <div class="brand">BELLINI<br><small>Scuola Design</small></div>
+  <div class="navlinks">
+    <a href="#prodotti">Prodotti</a>
+    <a href="#azienda">Chi siamo</a>
+    <a href="#contatti" class="cta-small">Contattaci</a>
+  </div>
+</nav>
+</div>
+
+<section class="hero">
+  <div class="blob gold"></div><div class="blob beige"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Bellini Scuola Design</div>
+      <h1>Arredi che<br>fanno scuola.</h1>
+      <p>Scopri la nostra selezione di banchi e arredi scolastici. Design funzionale, materiali scelti e offerte di fine stagione.</p>
+      <div class="buttons">
+        <a class="btn btn-dark" href="#prodotti">Scopri le offerte</a>
+        <a class="btn btn-light" href="#contatti">Richiedi informazioni</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span>Svendita di fine stagione</span>
+      <strong>Fino al<br>50% di sconto</strong>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container intro-grid">
+    <div>
+      <div class="section-label">La nostra proposta</div>
+      <h2>Spazi migliori<br>per imparare.</h2>
+    </div>
+    <p>Ogni ambiente scolastico ha bisogno di arredi resistenti, pratici e pensati per durare. In questa selezione trovi alcuni prodotti in promozione, disponibili fino a esaurimento.</p>
+  </div>
+</section>
+
+<section class="products-section" id="prodotti">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="section-label">Offerte selezionate</div>
+        <h2>I banchi in promozione</h2>
+      </div>
+      <p>Due soluzioni per l'arredo scolastico, ora disponibili a un prezzo speciale.</p>
+    </div>
+
+    <div class="products">
+      <article class="product">
+        <div class="product-image">
+          <!-- Per inserire una foto vera sostituisci questo blocco con:
+          <img src="nome-foto.jpg" style="max-width:90%;max-height:260px;object-fit:contain" alt="Banco in legno di faggio"> -->
+          <div class="desk">
+            <div class="top"></div><div class="leg l1"></div><div class="leg l2"></div><div class="bar"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-type">Linea classica</div>
+          <h3>Banco in legno di faggio</h3>
+          <div class="price-row">
+            <div><div class="old-price">Prima: 95,00 €</div><small>Offerta fine stagione</small></div>
+            <div class="price">50,00 €</div>
+          </div>
+          <a href="#contatti">Richiedi informazioni →</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product-image">
+          <div class="desk mdf">
+            <div class="top"></div><div class="leg l1"></div><div class="leg l2"></div><div class="bar"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-type">Linea essenziale</div>
+          <h3>Banco in MDF</h3>
+          <div class="price-row">
+            <div><div class="old-price">Prima: 50,00 €</div><small>Offerta fine stagione</small></div>
+            <div class="price">25,00 €</div>
+          </div>
+          <a href="#contatti">Richiedi informazioni →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="promo">
+  <div class="container promo-grid">
+    <div>
+      <div class="section-label" style="color:#55471f">Perché scegliere Bellini</div>
+      <h2>Qualità, funzionalità e design.</h2>
+    </div>
+    <div class="promo-box">
+      <ul>
+        <li>Arredi pensati per l'ambiente scolastico</li>
+        <li>Materiali resistenti e facili da mantenere</li>
+        <li>Soluzioni per diverse esigenze e spazi</li>
+        <li>Supporto nella scelta dei prodotti</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="azienda">
+  <div class="container about-grid">
+    <div class="about-art"></div>
+    <div>
+      <div class="section-label">Bellini Scuola Design</div>
+      <h2>Progettiamo il futuro, un'aula alla volta.</h2>
+      <p style="font-size:18px;line-height:1.7">Un buon ambiente può rendere più piacevole ogni momento della giornata scolastica. Per questo selezioniamo soluzioni che uniscono praticità, comfort e un linguaggio visivo semplice e contemporaneo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="container contact-grid">
+    <div>
+      <div class="section-label" style="color:#c9c1b2">Contatti</div>
+      <h2>Parliamo del tuo progetto.</h2>
+      <p>Via Achille Allioni, 71 – Torino<br>
+      Telefono: +39 123 456 7890<br>
+      Instagram: @bellini.scuola.design</p>
+    </div>
+    <form class="contact-card" onsubmit="event.preventDefault(); alert('Messaggio pronto! Per un sito reale il modulo deve essere collegato a un servizio email.');">
+      <strong>Richiedi informazioni</strong><br><br>
+      <input type="text" placeholder="Il tuo nome">
+      <input type="email" placeholder="La tua email">
+      <textarea rows="4" placeholder="Come possiamo aiutarti?"></textarea>
+      <button type="submit">Invia richiesta</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Bellini Scuola Design</span>
+    <span>Sito dimostrativo • Tutti i contenuti sono modificabili</span>
+  </div>
+</footer>
+
+</body>
+</html>
