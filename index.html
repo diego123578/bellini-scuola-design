@@ -240,13 +240,16 @@ footer{padding:28px 0;background:#191714;color:#d8d3c8;font-size:13px}
       Telefono: +39 123 456 7890<br>
       Instagram: @bellini.scuola.design</p>
     </div>
-    <form class="contact-card" onsubmit="event.preventDefault(); alert('Messaggio pronto! Per un sito reale il modulo deve essere collegato a un servizio email.');">
-      <strong>Richiedi informazioni</strong><br><br>
-      <input type="text" placeholder="Il tuo nome">
-      <input type="email" placeholder="La tua email">
-      <textarea rows="4" placeholder="Come possiamo aiutarti?"></textarea>
-      <button type="submit">Invia richiesta</button>
-    </form>
+    <form class="contact-card"
+      action="https://formspree.io/f/mnpdqopa"
+      method="POST">
+  <strong>Richiedi informazioni</strong><br><br>
+  <input type="text" name="nome" placeholder="Il tuo nome" required>
+  <input type="email" name="email" placeholder="La tua email" required>
+  <textarea name="messaggio" rows="4"
+            placeholder="Come possiamo aiutarti?" required></textarea>
+  <button type="submit">Invia richiesta</button>
+</form>
   </div>
 </section>
 
